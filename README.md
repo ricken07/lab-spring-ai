@@ -1,2 +1,2 @@
-# lab-spring-ai
-Lab Spring AI
+# Spring AI - LAB
+Implémentations des concepts IA avec Spring AI
