@@ -1,0 +1,24 @@
+spring:
+  ai:
+    mistralai:
+      api-key: ${MISTRALAI_API_KEY}
+    vectorstore:
+      pgvector:
+        dimensions: 1024
+        initialize-schema: true
+
+  # Database
+  datasource:
+    url: jdbc:postgresql://localhost:5438/vector_store
+    username: postgres
+    password: postgres
+
+  main:
+    banner-mode: off
+    web-application-type: none
+
+logging:
+  level:
+    org.springframework:
+      web:
+        client: debug

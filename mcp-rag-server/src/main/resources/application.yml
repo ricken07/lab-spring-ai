@@ -1,0 +1,28 @@
+spring:
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+    mcp:
+      server:
+        name: specifications-mcp-server
+        version: 1.0.0
+        stdio: true
+    vectorstore:
+      pgvector:
+        dimensions: 1024
+        initialize-schema: true
+
+  # Database
+  datasource:
+    url: jdbc:postgresql://localhost:5435/vector_store
+    username: postgres
+    password: postgres
+  main:
+    banner-mode: off
+    web-application-type: none
+
+logging:
+  pattern:
+    console:
+server:
+  port: 0

@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "app-specifications": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "/Users/rickenbazolo/Documents/shared/lab-spring-ai/mcp-rag-server/target/specification-demo-mcp.jar"
+      ],
+      "env": {}
+    },
+    "search1api": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "search1api-mcp"
+      ],
+      "env": {}
+    },
+    "github": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server"
+      ],
+      "env": {}
+    }
+  }
+}

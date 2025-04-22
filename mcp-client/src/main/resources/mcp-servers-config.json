@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "search1api": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "search1api-mcp"
+      ],
+      "env": {}
+    },
+    "github": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server"
+      ],
+      "env": {}
+    }
+  }
+}

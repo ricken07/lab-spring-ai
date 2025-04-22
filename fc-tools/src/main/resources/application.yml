@@ -1,0 +1,14 @@
+spring:
+  ai:
+    mistralai:
+      api-key: ${MISTRALAI_API_KEY}
+
+  main:
+    banner-mode: off
+    web-application-type: none
+
+logging:
+  level:
+    org.springframework:
+      web:
+        client: debug

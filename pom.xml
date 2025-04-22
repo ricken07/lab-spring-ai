@@ -15,6 +15,11 @@
 
     <modules>
         <module>models</module>
+        <module>rag</module>
+        <module>fc-tools</module>
+        <module>mcp-rag-server</module>
+        <module>fc-tools-secure</module>
+        <module>mcp-client</module>
     </modules>
 
 </project>
