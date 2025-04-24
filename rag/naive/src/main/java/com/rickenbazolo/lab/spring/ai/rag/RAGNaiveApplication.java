@@ -43,7 +43,7 @@ public class RAGNaiveApplication {
             var chunks = new TokenTextSplitter().apply(documents);
 
             // 3. Load to vector store
-            //vectorStore.add(chunks);
+            vectorStore.add(chunks);
 
             // Chat with file
             String input = "";
@@ -66,6 +66,7 @@ public class RAGNaiveApplication {
                 .query(input)
                 .similarityThreshold(0.7) // Seuil de similarité pour filtrer la réponse de la recherche.
                 .topK(2) // les "k" premiers résultats similaires à renvoyer.
+                //.filterExpression("cuisines=='africaine'") // Metadata filter
                 .build());
 
         var systemMessage = new SystemPromptTemplate("""

@@ -13,19 +13,23 @@ public class DemoController {
 
     private final ChatClient chatClient;
 
+    private final DemoService demoService;
+
     public DemoController(
-            ChatClient.Builder chatClientBuilder) {
+            ChatClient.Builder chatClientBuilder, DemoService demoService) {
         this.chatClient = chatClientBuilder
                 .defaultAdvisors(
                         new MessageChatMemoryAdvisor(new InMemoryChatMemory()),
                         new SimpleLoggerAdvisor())
                 .build();
+        this.demoService = demoService;
     }
 
     @PostMapping("/question")
     public String ask(@RequestBody Question body) {
         return chatClient.prompt(body.input())
                 .tools("getUserAccountByName", "getCurrentDateTime")
+                .tools(new MethodAsTools(this.demoService))
                 .call()
                 .content();
     }

@@ -43,7 +43,7 @@ public class RAGNaiveWithAdvisorsApplication {
             var chunks = new TokenTextSplitter().apply(documents);
 
             // 3. Load to vector store
-            //vectorStore.add(chunks);
+            vectorStore.add(chunks);
 
             // Chat with file
             String input = "";

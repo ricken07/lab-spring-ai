@@ -30,6 +30,12 @@ public class DemoService {
         return LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+    public String getCurrentJavaVersion() {
+        System.out.println("Current Java version: " + System.getProperty("java.version"));
+        return System.getProperty("java.version");
+    }
+
     private final List<UserAccount> USER_ACCOUNTS = List.of(
             new UserAccount(1, "Dubois", 100, "Courant"),
             new UserAccount(2, "Martin", 200, "Épargne"),
