@@ -4,7 +4,6 @@ import io.modelcontextprotocol.client.McpSyncClient;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
-import org.springframework.ai.chat.memory.InMemoryChatMemory;
 import org.springframework.ai.mcp.SyncMcpToolCallbackProvider;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -31,7 +30,6 @@ public class McpClientApplication {
                             """)
                     .defaultTools(new SyncMcpToolCallbackProvider(mcpSyncClients))
                     .defaultAdvisors(
-                            new MessageChatMemoryAdvisor(new InMemoryChatMemory()),
                             new SimpleLoggerAdvisor()
                     )
                     .build();
